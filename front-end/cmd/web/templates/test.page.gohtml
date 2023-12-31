@@ -59,7 +59,7 @@
             body: JSON.stringify(payload),
             headers: headers
         }
-        fetch("http:\/\/localhost:8080/handle", body)
+        fetch({{print .BrokerURL "/handle"}}, body)
         .then((response) => response.json())
         .then((data) => {
             sent.innerHTML = JSON.stringify(payload, undefined, 4);
@@ -95,7 +95,7 @@
             body: JSON.stringify(payload),
             headers: headers
         }
-        fetch("http:\/\/localhost:8080/handle", body)
+        fetch({{print .BrokerURL "/handle"}}, body)
         .then((response) => response.json())
         .then((data) => {
             sent.innerHTML = JSON.stringify(payload, undefined, 4);
@@ -117,7 +117,7 @@
         const body = {
             method: 'POST',
         }
-        fetch("http:\/\/localhost:8080", body)
+        fetch({{.BrokerURL}}, body)
         .then((response) => response.json())
         .then((data) => {
             sent.innerHTML = "empty post request";
@@ -152,7 +152,8 @@
             body: JSON.stringify(payload),
             headers: headers
         }
-        fetch("http:\/\/localhost:8080/handle", body)
+        //fetch("http:\/\/localhost:8080/handle", body)
+        fetch({{print .BrokerURL "/handle"}}, body)
         .then((response) => response.json())
         .then((data) => {
             sent.innerHTML = JSON.stringify(payload, undefined, 4);
