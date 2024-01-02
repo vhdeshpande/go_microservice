@@ -29,6 +29,6 @@ swarm.learn-code.ca {
 	reverse_proxy  http://front-end:8081
 }
 
-broker.learn-code.ca {
+broker.learn-code.c {
 	reverse_proxy http://broker-service:8080
 }
